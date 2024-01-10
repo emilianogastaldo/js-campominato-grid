@@ -7,7 +7,7 @@
 
 /* Generics */
 .container {
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -38,6 +38,30 @@ button {
 /* Lavoro sul main */
 main {
     background-color: bisque;
+    padding: 10px 0;
+}
+
+.grid {
+    width: 500px;
+    height: 500px;
+    margin: 60px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+}
+
+.cell {
+    width: calc(100%/10);
+    height: calc(100%/10);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell.clicked {
+    background-color: lightblue;
 }
 
 /* Footer */

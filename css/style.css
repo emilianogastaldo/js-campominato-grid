@@ -52,6 +52,7 @@ main {
 }
 
 .cell {
+    cursor: pointer;
     width: calc(100%/10);
     height: calc(100%/10);
     border: 1px solid black;

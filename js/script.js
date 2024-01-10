@@ -14,15 +14,23 @@ const getNewCell = content => {
     const newCell = document.createElement('div');
     newCell.innerText = content;
     newCell.classList.add('cell');
-    grid.appendChild(newCell);
-
+    return newCell;
 }
+
+
 //Creo l'evento per creare le celle
 playButton.addEventListener('click', () => {
     //Se esiste una griglia la cancello.
     if (grid.hasChildNodes()) grid.innerHTML = '';
 
+    //Creo le celle
     for (let i = 1; i <= totalCell; i++) {
-        getNewCell(i);
+        const cell = getNewCell(i);
+        //Aggiungo l'interazione delle celle
+        cell.addEventListener('click', () => {
+            if (!(cell.classList.contains('clicked'))) console.log("Il numero all'interno è: " + i);
+            cell.classList.toggle('clicked');
+        });
+        grid.appendChild(cell);
     }
 });

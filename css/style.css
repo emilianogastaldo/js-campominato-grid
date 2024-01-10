@@ -29,6 +29,13 @@ header img {
     align-items: center;
 }
 
+form {
+    flex-basis: 20%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
 button {
     padding: 2px 20px;
     font-size: medium;
@@ -41,6 +48,7 @@ main {
     padding: 10px 0;
 }
 
+/* Creo la griglia */
 .grid {
     width: 500px;
     height: 500px;
@@ -51,6 +59,7 @@ main {
 
 }
 
+/* Customizzo le celle */
 .cell {
     cursor: pointer;
     width: calc(100%/10);
@@ -59,6 +68,21 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cell-10 {
+    width: calc(100%/10);
+    height: calc(100%/10);
+}
+
+.cell-9 {
+    width: calc(100%/9);
+    height: calc(100%/9);
+}
+
+.cell-7 {
+    width: calc(100%/7);
+    height: calc(100%/7);
 }
 
 .cell.clicked {

@@ -1,0 +1,47 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Generics */
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* Lavoro sull'header */
+header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+header img {
+    height: 70px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    padding: 2px 20px;
+    font-size: medium;
+    border-radius: 5px;
+}
+
+/* Lavoro sul main */
+main {
+    background-color: bisque;
+}
+
+/* Footer */
+footer {
+    padding: 30px;
+
+}

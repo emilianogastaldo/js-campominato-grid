@@ -9,57 +9,47 @@ const grid = document.querySelector('.grid');
 //Decido righe e colonne e quindi il numero di celle
 
 // Funzione per creare una nuova cella e ne decido la grandezza in base alla difficoltà
-const getNewCell = (content, difficulty) => {
+const getNewCell = content => {
     const newCell = document.createElement('div');
     newCell.innerText = content;
     newCell.classList.add('cell');
-    switch (difficulty) {
-        case 1:
-            newCell.classList.add('cell-7');
-            break;
-        case 2:
-            newCell.classList.add('cell-9');
-            break;
-        case 3:
-            newCell.classList.add('cell-10');
-            break;
-    }
+
     return newCell;
 }
 
 
 //Creo l'evento per creare le celle
-playButton.addEventListener('click', e => {
+playForm.addEventListener('submit', e => {
     e.preventDefault();
 
     //Se esiste una griglia la cancello.
-    if (grid.hasChildNodes()) grid.innerHTML = '';
+    grid.innerText = '';
 
-    //Recupero il valore della difficoltà e decido quante colonne e righe
-    let rows;
-    let cols;
-    const difficultyValue = parseInt(difficulty.value);
+    //Recupero il valore della difficoltà e decido quante colonne e righe    
+    const difficultyValue = difficulty.value;
 
+    //aggiungo la classe a grid per la grandezza delle celle
+    grid.classList.add(difficultyValue);
+
+    //Decido la quantità di colonne e righe
+    let rows = 10;
+    let cols = 10;
     switch (difficultyValue) {
-        case 1:
+        case 'hard':
             rows = 7;
             cols = 7;
             break;
-        case 2:
+        case 'medium':
             rows = 9;
             cols = 9;
             break;
-        case 3:
-            rows = 10;
-            cols = 10;
-            break;
     }
 
-    const totalCell = rows * cols;
+    const totalCells = rows * cols;
 
     //Creo le celle
-    for (let i = 1; i <= totalCell; i++) {
-        const cell = getNewCell(i, difficultyValue);
+    for (let i = 1; i <= totalCells; i++) {
+        const cell = getNewCell(i);
         //Aggiungo l'interazione delle celle
         cell.addEventListener('click', () => {
             if (!(cell.classList.contains('clicked'))) console.log("Il numero all'interno è: " + i);

@@ -60,7 +60,7 @@ main {
 }
 
 /* Customizzo le celle */
-.cell {
+.grid .cell {
     cursor: pointer;
     border: 1px solid black;
     display: flex;
@@ -68,17 +68,17 @@ main {
     align-items: center;
 }
 
-.cell-10 {
+.grid.easy .cell {
     width: calc(100%/10);
     height: calc(100%/10);
 }
 
-.cell-9 {
+.grid.medium .cell {
     width: calc(100%/9);
     height: calc(100%/9);
 }
 
-.cell-7 {
+.grid.hard .cell {
     width: calc(100%/7);
     height: calc(100%/7);
 }
